@@ -1,32 +1,27 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
+import axois from "axios";
 
-export class Home extends Component {
+export class Highscore extends Component {
   constructor(props) {
     super(props);
     this.state = { userdata: [] };
   }
+
   componentDidMount() {
     this.refreshList();
   }
+
   refreshList() {
-    console.log("inside handleGetJson");
-    fetch("https://schnitzeljagdar.herokuapp.com/users/getAllUser")
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ userdata: data });
-      });
-    
-  refreshList() {
+    /*
     fetch(
-      "https://cors-anywhere.herokuapp.com/${https://schnitzeljagdar.herokuapp.com/users/getAllUser}"
-    
-      )
+      "https://cors-anywhere.herokuapp.com${https://schnitzeljagdar.herokuapp.com/users/getAllUser}"
+    )
       .then(response => response.json())
       .then(data => {
         this.setState({ userdata: data });
-      });
-    
+      });*/
+
     this.setState({
       userdata: [
         {
@@ -49,7 +44,6 @@ export class Home extends Component {
         }
       ]
     });
-    
   }
   render() {
     const { userdata } = this.state;
