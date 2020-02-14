@@ -12,9 +12,7 @@ export class HighscoreList extends Component {
 
   componentDidMount() {
     axios
-      .get("https://schnitzeljagdar.herokuapp.com/users/getAllUser", {
-        mode: "no-cors"
-      })
+      .get("https://myorg.api.crm.dynamics/api/")
       .then(response => {
         console.log(response);
         this.setState({ users: response.data });
