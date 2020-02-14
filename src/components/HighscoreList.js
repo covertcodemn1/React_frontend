@@ -12,7 +12,9 @@ export class HighscoreList extends Component {
 
   componentDidMount() {
     axios
-      .get("https://schnitzeljagdar.herokuapp.com/users/getAllUser")
+      .get("https://schnitzeljagdar.herokuapp.com/users/getAllUser", {
+        mode: "no-cors"
+      })
       .then(response => {
         console.log(response);
         this.setState({ users: response.data });
