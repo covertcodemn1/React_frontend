@@ -11,7 +11,7 @@ export class Home extends Component {
   }
   refreshList() {
     console.log("inside handleGetJson");
-    fetch("https://schnitzeljagdar.herokuapp.com/users/getAllUser")
+    fetch("https://myorg.api.crm.dynamics/api/")
       .then(response => response.json())
       .then(data => {
         this.setState({ userdata: data });
