@@ -16,41 +16,8 @@ export class Home extends Component {
       .then(data => {
         this.setState({ userdata: data });
       });
-    
-  refreshList() {
-    fetch(
-      "https://cors-anywhere.herokuapp.com/${https://schnitzeljagdar.herokuapp.com/users/getAllUser}"
-    
-      )
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ userdata: data });
-      });
-    
-    this.setState({
-      userdata: [
-        {
-          UserID: 1,
-          UserName: "User1",
-          UserSchoolClass: "4BHIF",
-          UserHighscore: 212
-        },
-        {
-          UserID: 2,
-          UserName: "User2",
-          UserSchoolClass: "1AHIF",
-          UserHighscore: 42
-        },
-        {
-          UserID: 3,
-          UserName: "User3",
-          UserSchoolClass: "2BHIF",
-          UserHighscore: 400
-        }
-      ]
-    });
-    
   }
+
   render() {
     const { userdata } = this.state;
     return (

@@ -5,7 +5,7 @@ import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import { Navigation } from "./components/Navigation";
 import { Highscore } from "./components/Highscore";
-import { Highscorelist } from "./components/HighscoreList";
+import { HighscoreList } from "./components/HighscoreList";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/Highscore" component={Highscore} exact />
-          <Route path="/Highscorelist" component={Highscorelist} exact />
+          <Route path="/Highscorelist" component={HighscoreList} exact />
           <Route path="/login" component={Login} exact />
           <Route path="/register" component={Register} exact />
         </Switch>

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
-import axois from "axios";
 
 export class Highscore extends Component {
   constructor(props) {
@@ -20,7 +19,7 @@ export class Highscore extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ userdata: data });
-      });*/
+      });
 
     this.setState({
       userdata: [
@@ -43,7 +42,7 @@ export class Highscore extends Component {
           UserHighscore: 400
         }
       ]
-    });
+    });*/
   }
   render() {
     const { userdata } = this.state;

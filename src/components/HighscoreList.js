@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component } from "react";
 import axios from "axios";
 
-export class HighscoreList extends React.Component {
+export class HighscoreList extends Component {
   constructor(props) {
     super(props);
 
