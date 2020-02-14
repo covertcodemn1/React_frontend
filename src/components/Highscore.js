@@ -12,7 +12,6 @@ export class Highscore extends Component {
   }
 
   refreshList() {
-    /*
     fetch(
       "https://cors-anywhere.herokuapp.com${https://schnitzeljagdar.herokuapp.com/users/getAllUser}"
     )
@@ -20,7 +19,7 @@ export class Highscore extends Component {
       .then(data => {
         this.setState({ userdata: data });
       });
-
+    /*
     this.setState({
       userdata: [
         {

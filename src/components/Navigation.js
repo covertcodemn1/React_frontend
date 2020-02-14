@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { Navbar, Nav, Link } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import logo from "../logo1.svg";
 
 export class Navigation extends Component {
