@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import { Home } from "./components/Home";
 import { Login } from "./components/Login";
-import { Register } from "./components/Register";
 import { Navigation } from "./components/Navigation";
 import { Highscore } from "./components/Highscore";
 import { HighscoreList } from "./components/HighscoreList";
@@ -19,7 +18,6 @@ function App() {
           <Route path="/Highscore" component={Highscore} exact />
           <Route path="/Highscorelist" component={HighscoreList} exact />
           <Route path="/login" component={Login} exact />
-          <Route path="/register" component={Register} exact />
         </Switch>
         <br />
         <br />

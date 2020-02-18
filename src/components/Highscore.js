@@ -12,9 +12,7 @@ export class Highscore extends Component {
   }
 
   refreshList() {
-    fetch("https://schnitzeljagdar.herokuapp.com/users/getAllUser", {
-      mode: "no-cors"
-    })
+    fetch("https://schnitzeljagdar.herokuapp.com/users/getAllUser")
       .then(response => response.json())
       .then(data => {
         this.setState({ userdata: data });
@@ -46,26 +44,28 @@ export class Highscore extends Component {
   render() {
     const { userdata } = this.state;
     return (
-      <Table className="mt-4" striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th>UserID</th>
-            <th>UserName</th>
-            <th>UserSchoolClass</th>
-            <th>UserHighscore</th>
-          </tr>
-        </thead>
-        <tbody>
-          {userdata.map(user => (
-            <tr key={user.UserID}>
-              <td>{user.UserID}</td>
-              <td>{user.UserName}</td>
-              <td>{user.UserSchoolClass}</td>
-              <td>{user.UserHighscore}</td>
+      <React.Fragment>
+        <Table className="mt-4" striped bordered hover size="sm">
+          <thead>
+            <tr>
+              <th>UserID</th>
+              <th>UserName</th>
+              <th>UserSchoolClass</th>
+              <th>UserHighscore</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {userdata.map(user => (
+              <tr key={user.UserID}>
+                <td>{user.UserID}</td>
+                <td>{user.UserName}</td>
+                <td>{user.UserSchoolClass}</td>
+                <td>{user.UserHighscore}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </React.Fragment>
     );
   }
 }

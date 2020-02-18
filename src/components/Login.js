@@ -2,6 +2,27 @@ import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 
 export class Login extends Component {
+  constructor() {
+    super();
+    this.state = {
+      email: "",
+      passwort: ""
+    };
+  }
+  enterToLogin = event => {
+    this.setState({ email: event.target.value });
+    this.setState({ passwort: event.target.value });
+  };
+  handellogin = () => {
+    if (this.state.email > 3 && this.state.passwort > 3) {
+      fetch("https://schnitzeljagdar.herokuapp.com/users/getAllUser"),
+        {
+          mode: "no-cors",
+          method: "POST"
+        };
+    }
+  };
+
   render() {
     return (
       <Form>
@@ -9,9 +30,6 @@ export class Login extends Component {
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
-            We'll never share your email with anyone else.
-          </Form.Text>
         </Form.Group>
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
