@@ -9,6 +9,7 @@ export class Login extends Component {
       passwort: ""
     };
   }
+  /*
   enterToLogin = event => {
     this.setState({ email: event.target.value });
     this.setState({ passwort: event.target.value });
@@ -17,11 +18,19 @@ export class Login extends Component {
     if (this.state.email > 3 && this.state.passwort > 3) {
       fetch("https://schnitzeljagdar.herokuapp.com/users/getAllUser"),
         {
-          mode: "no-cors",
-          method: "POST"
-        };
+          mode: "cors",
+          method: "POST",
+          body: JSON.stringify({
+            email: this.state.email,
+            passwort: this.state.passwort
+          })
+        }
+          .then(response => response.json())
+          .then(() => {
+            alert("Thank you for subscribing!");
+          });
     }
-  };
+  };*/
 
   render() {
     return (
@@ -35,7 +44,7 @@ export class Login extends Component {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onclick="handellogin();">
           Submit
         </Button>
       </Form>
