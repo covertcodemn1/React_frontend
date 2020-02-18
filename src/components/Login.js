@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
 
@@ -9,7 +10,7 @@ export class Login extends Component {
       passwort: ""
     };
   }
-  /*
+
   enterToLogin = event => {
     this.setState({ email: event.target.value });
     this.setState({ passwort: event.target.value });
@@ -24,13 +25,9 @@ export class Login extends Component {
             email: this.state.email,
             passwort: this.state.passwort
           })
-        }
-          .then(response => response.json())
-          .then(() => {
-            alert("Thank you for subscribing!");
-          });
+        }.then(response => response.json());
     }
-  };*/
+  };
 
   render() {
     return (
@@ -44,7 +41,7 @@ export class Login extends Component {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
-        <Button variant="primary" type="submit" onclick="handellogin();">
+        <Button variant="primary" type="submit" onClick="handellogin();">
           Submit
         </Button>
       </Form>
