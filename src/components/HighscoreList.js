@@ -27,11 +27,26 @@ export class HighscoreList extends Component {
     const { users } = this.state;
     return (
       <React.Fragment>
-        <ul>
-          {users.map(user => (
-            <li>{user.name}</li>
-          ))}
-        </ul>
+        <Table className="mt-4" striped bordered hover size="sm">
+          <thead>
+            <tr>
+              <th>UserID</th>
+              <th>UserName</th>
+              <th>UserSchoolClass</th>
+              <th>UserHighscore</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map(user => (
+              <tr key={user.UserID}>
+                <td>{user.UserID}</td>
+                <td>{user.UserName}</td>
+                <td>{user.UserSchoolClass}</td>
+                <td>{user.UserHighscore}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </React.Fragment>
     );
   }
