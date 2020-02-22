@@ -33,7 +33,7 @@ export class HighscoreList extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.state.map(user => (
+            {this.state.users.map(user => (
               <tr key={user.ID}>
                 <td>{user.UserID}</td>
                 <td>{user.UserName}</td>
