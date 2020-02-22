@@ -26,13 +26,11 @@ export class HighscoreList extends Component {
   render() {
     const { users } = this.state;
     return (
-        <React.Fragment>
+      <React.Fragment>
         <ul>
-          {this.state.users.map{user =>
-          <li>
-            {user.name}
-          </li>
-          }}
+          {this.state.users.map(user => (
+            <li>{user.name}</li>
+          ))}
         </ul>
       </React.Fragment>
     );
