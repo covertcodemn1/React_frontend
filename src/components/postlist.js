@@ -14,6 +14,7 @@ class postlist extends Component {
       .get("https://schnitzeljagdar.herokuapp.com/users/getAllUser")
       .then(response => {
         console.log(response);
+        this.setState({ users: response.data });
       })
       .catch(error => {
         console.log(error);
@@ -21,6 +22,14 @@ class postlist extends Component {
   }
 
   render() {
-    return <div>Hello</div>;
+    const { users } = this.state;
+    return (
+      <div>
+        hsdkjdaslkfj
+        {users.length
+          ? users.map(user => <div key={user.id}>{user.name}</div>)
+          : null}
+      </div>
+    );
   }
 }
