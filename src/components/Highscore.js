@@ -82,10 +82,10 @@ export class Highscore extends React.Component {
   fetchUsers() {
     fetch(`https://schnitzeljagdar.herokuapp.com/users/getAllUser`)
       .then(response => response.json())
-      .then(data =>
+      .then(json =>
         this.setState({
-          users: data,
-          isLoading: false
+          isLoading: false,
+          users: json.users
         })
       )
       .catch(error => this.setState({ error, isLoading: false }));

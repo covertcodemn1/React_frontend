@@ -27,7 +27,7 @@ export class postlist extends Component {
       <div>
         hsdkjdaslkfj
         {users.length
-          ? users.map(user => <div key={user.id}>{user.username}</div>)
+          ? users.map(user => <div key={user.email}>{user.username}</div>)
           : null}
       </div>
     );
