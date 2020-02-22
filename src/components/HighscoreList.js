@@ -3,9 +3,10 @@ import axios from "axios";
 import { Table } from "react-bootstrap";
 
 export class HighscoreList extends Component {
-  state = {
-    users: []
-  };
+  constructor(props) {
+    super(props);
+    this.state = { users: [] };
+  }
 
   componentDidMount() {
     axios
