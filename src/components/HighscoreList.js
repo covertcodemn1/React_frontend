@@ -42,14 +42,13 @@ export class HighscoreList extends Component {
             </tr>
           </thead>
           <tbody>
-            {users.map(user => (
-              <tr key={user.UserID}>
-                <td>{user.UserID}</td>
-                <td>{user.UserName}</td>
-                <td>{user.UserSchoolClass}</td>
-                <td>{user.UserHighscore}</td>
-              </tr>
-            ))}
+            <tr key={user.UserID}>
+              <td>{user.UserID}</td>
+              <td>{user.UserName}</td>
+              <td>{user.UserSchoolClass}</td>
+              <td>{user.UserHighscore}</td>
+            </tr>
+            )}
           </tbody>
         </Table>
       </React.Fragment>
