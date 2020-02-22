@@ -1,7 +1,7 @@
 import react, { Component } from "react";
 import axios from "axios";
-r;
-class postlist extends Component {
+
+export class postlist extends Component {
   constructor(props) {
     super(props);
     this.state = {
