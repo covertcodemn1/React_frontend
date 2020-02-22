@@ -15,8 +15,8 @@ export class HighscoreList extends Component {
     axios
       .get(`https://schnitzeljagdar.herokuapp.com/users/getAllUser`)
       .then(response => {
-        const user = JSON.parse(res.data);
-        this.setState({ users });
+        console.log(response);
+        this.setState({ users: response.data });
       })
       .catch(error => {
         console.log(error);
