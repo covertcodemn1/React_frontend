@@ -5,15 +5,18 @@ import { Table } from "react-bootstrap";
 export class HighscoreList extends Component {
   constructor(props) {
     super(props);
-    this.state = { users: [] };
+
+    this.state = {
+      users: []
+    };
   }
 
   componentDidMount() {
     axios
       .get(`https://schnitzeljagdar.herokuapp.com/users/getAllUser`)
-      .then(res => {
-        console.log(res);
-        this.setState({ users: res.data });
+      .then(response => {
+        console.log(response);
+        this.setState({ users: response.data });
       })
       .catch(error => {
         console.log(error);
@@ -21,28 +24,16 @@ export class HighscoreList extends Component {
   }
 
   render() {
+    const { users } = this.state;
     return (
-      <React.Fragment>
-        <Table className="mt-4" striped bordered hover size="sm">
-          <thead>
-            <tr>
-              <th>UserID</th>
-              <th>UserName</th>
-              <th>UserSchoolClass</th>
-              <th>UserHighscore</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.users.map(user => (
-              <tr key={user.ID}>
-                <td>{user.UserID}</td>
-                <td>{user.UserName}</td>
-                <td>{user.UserSchoolClass}</td>
-                <td>{user.UserHighscore}</td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
+        <React.Fragment>
+        <ul>
+          {this.state.users.map{user =>
+          <li>
+            {user.name}
+          </li>
+          }}
+        </ul>
       </React.Fragment>
     );
   }
