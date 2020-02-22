@@ -24,9 +24,8 @@ export class HighscoreList extends Component {
   }
 
   render() {
-    var users = [];
-    if (this.state.listOfUsers) {
-      user = this.state.listOfUsers.map(user => {
+    if (this.state.users) {
+      user = this.state.users.map(user => {
         return <p>{user.ID}</p>;
       });
     }
