@@ -14,9 +14,9 @@ export class HighscoreList extends Component {
   componentDidMount() {
     axios
       .get(`https://schnitzeljagdar.herokuapp.com/users/getAllUser`)
-      .then(response => {
-        console.log(response);
-        this.setState({ users: response.data });
+      .then(res => {
+        console.log(res);
+        this.setState({ users: res.data });
       })
       .catch(error => {
         console.log(error);
@@ -24,7 +24,7 @@ export class HighscoreList extends Component {
   }
 
   render() {
-    let users = this.state.user || [];
+    const users = this.state;
     return (
       <React.Fragment>
         <Table className="mt-4" striped bordered hover size="sm">
