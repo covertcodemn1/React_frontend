@@ -11,15 +11,18 @@ export class Login extends Component {
     };
   }
 
-  enterToLogin = event => {
+  enterEmail = event => {
     this.setState({ email: event.target.value });
+  };
+  enterPasswort = event => {
     this.setState({ passwort: event.target.value });
   };
+
   handellogin = () => {
     if (this.state.email > 3 && this.state.passwort > 3) {
       fetch("https://schnitzeljagdar.herokuapp.com/users/getAllUser"),
         {
-          mode: "cors",
+          mode: "no-cors",
           method: "POST",
           body: JSON.stringify({
             email: this.state.email,
