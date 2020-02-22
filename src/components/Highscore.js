@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
 
+/*
 export class Highscore extends Component {
   constructor(props) {
     super(props);
@@ -17,7 +18,7 @@ export class Highscore extends Component {
       .then(data => {
         this.setState({ userdata: data });
       });
-    /*
+    
     this.setState({
       userdata: [
         {
@@ -39,7 +40,7 @@ export class Highscore extends Component {
           UserHighscore: 400
         }
       ]
-    });*/
+    });
   }
   render() {
     const { userdata } = this.state;
@@ -65,6 +66,54 @@ export class Highscore extends Component {
             ))}
           </tbody>
         </Table>
+      </React.Fragment>
+    );
+  }
+}
+*/
+
+export class Highscore extends React.Component {
+  state = {
+    isLoading: true,
+    users: [],
+    error: null
+  };
+
+  fetchUsers() {
+    fetch(`https://schnitzeljagdar.herokuapp.com/users/getAllUser`)
+      .then(response => response.json())
+      .then(data =>
+        this.setState({
+          users: data,
+          isLoading: false
+        })
+      )
+      .catch(error => this.setState({ error, isLoading: false }));
+  }
+
+  componentDidMount() {
+    this.fetchUsers();
+  }
+  render() {
+    const { isLoading, users, error } = this.state;
+    return (
+      <React.Fragment>
+        <h1>Random User</h1>
+        {error ? <p>{error.message}</p> : null}
+        {!isLoading ? (
+          users.map(user => {
+            const { username, highscore, email } = user;
+            return (
+              <div key={username}>
+                <p>Highscore: {highscore}</p>
+                <p>Email Address: {email}</p>
+                <hr />
+              </div>
+            );
+          })
+        ) : (
+          <h3>Loading...</h3>
+        )}
       </React.Fragment>
     );
   }
