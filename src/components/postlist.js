@@ -28,7 +28,7 @@ export class postlist extends Component {
     const { isLoading, users } = this.state;
     return (
       <React.Fragment>
-        <h2>Random User</h2>
+        <h2>User</h2>
         <div>
           {!isLoading ? (
             users.map(user => {
