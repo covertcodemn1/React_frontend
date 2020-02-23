@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-export default class App extends Component {
+export class postlist extends Component {
   state = {
     users: [],
     isLoading: true,
