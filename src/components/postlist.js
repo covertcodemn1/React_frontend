@@ -18,8 +18,8 @@ export class postlist extends React.Component {
   render() {
     return (
       <ul>
-        {this.state.users.map(person => (
-          <li>{person.name}</li>
+        {this.state.users.map(user => (
+          <li>{user.name}</li>
         ))}
       </ul>
     );
