@@ -1,35 +1,51 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-export class postlist extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: []
-    };
-  }
-
+export class App extends Component {
+  state = {
+    users: [],
+    isLoading: true,
+    errors: null
+  };
   componentDidMount() {
     axios
       .get("https://schnitzeljagdar.herokuapp.com/users/getAllUser")
-      .then(response => {
-        console.log(response);
-        this.setState({ users: response.data });
+      .then(response =>
+        response.data.results.map(user => ({
+          username: `${user.username}`,
+          email: `${user.email}`
+        }))
+      )
+      .then(users => {
+        this.setState({
+          users,
+          isLoading: false
+        });
       })
-      .catch(error => {
-        console.log(error);
-      });
+      .catch(error => this.setState({ error, isLoading: false }));
   }
-
   render() {
-    const { users } = this.state;
+    const { isLoading, users } = this.state;
     return (
-      <div>
-        hsdkjdaslkfj
-        {users.length
-          ? users.map(user => <div key={user.email}>{user.username}</div>)
-          : null}
-      </div>
+      <React.Fragment>
+        <h2>Random User</h2>
+        <div>
+          {!isLoading ? (
+            users.map(user => {
+              const { username, email } = user;
+              return (
+                <div key={username}>
+                  <p>{username}</p>
+                  <p>{email}</p>
+                  <hr />
+                </div>
+              );
+            })
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
+      </React.Fragment>
     );
   }
 }
