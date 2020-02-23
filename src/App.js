@@ -6,7 +6,7 @@ import { Navigation } from "./components/Navigation";
 import { Highscore } from "./components/Highscore";
 import { HighscoreList } from "./components/HighscoreList";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { postlist } from "./components/postlist";
+
 function App() {
   return (
     <BrowserRouter>
@@ -18,7 +18,6 @@ function App() {
           <Route path="/Highscore" component={Highscore} exact />
           <Route path="/Highscorelist" component={HighscoreList} exact />
           <Route path="/login" component={Login} exact />
-          <Route path="/postlist" component={postlist} exact />
         </Switch>
         <br />
         <br />
