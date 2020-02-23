@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Table } from "react-bootstrap";
+import Axios from "axios";
 
 /*
 export class Highscore extends Component {
@@ -72,49 +73,27 @@ export class Highscore extends Component {
 }
 */
 
-export class Highscore extends React.Component {
+export default class Highscore extends Component {
   state = {
-    isLoading: true,
-    users: [],
-    error: null
+    users: []
   };
 
-  fetchUsers() {
-    fetch(`https://schnitzeljagdar.herokuapp.com/users/getAllUser`)
-      .then(response => response.json())
-      .then(json =>
-        this.setState({
-          isLoading: false,
-          users: json.users
-        })
-      )
-      .catch(error => this.setState({ error, isLoading: false }));
+  componentDidMount() {
+    Axios.get("https://schnitzeljagdar.herokuapp.com/users/getAllUser").then(
+      response => {
+        const users = response.data;
+        this.setState({ users });
+      }
+    );
   }
 
-  componentDidMount() {
-    this.fetchUsers();
-  }
-  render() {
-    const { isLoading, users, error } = this.state;
+  redner() {
     return (
-      <React.Fragment>
-        <h1>Random User</h1>
-        {error ? <p>{error.message}</p> : null}
-        {!isLoading ? (
-          users.map(user => {
-            const { username, highscore, email } = user;
-            return (
-              <div key={username}>
-                <p>Highscore: {highscore}</p>
-                <p>Email Address: {email}</p>
-                <hr />
-              </div>
-            );
-          })
-        ) : (
-          <h3>Loading...</h3>
-        )}
-      </React.Fragment>
+      <ul>
+        {this.state.users.map(user => (
+          <li key={user.id}>user.username</li>
+        ))}
+      </ul>
     );
   }
 }
