@@ -1,25 +1,24 @@
 import React from "react";
+
 import axios from "axios";
 
-export class postlist extends React.Component {
+export default class postlist extends React.Component {
   state = {
-    users: []
+    persons: []
   };
 
   componentDidMount() {
-    axios
-      .get(`https://schnitzeljagdar.herokuapp.com/users/getAllUser`)
-      .then(res => {
-        const users = res.data;
-        this.setState({ users });
-      });
+    axios.get(`https://jsonplaceholder.typicode.com/users`).then(res => {
+      const persons = res.data;
+      this.setState({ persons });
+    });
   }
 
   render() {
     return (
       <ul>
-        {this.state.users.map(user => (
-          <li>{user.name}</li>
+        {this.state.persons.map(person => (
+          <li>{person.name}</li>
         ))}
       </ul>
     );
