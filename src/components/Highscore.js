@@ -73,7 +73,7 @@ export class Highscore extends Component {
 }
 */
 
-export default class Highscore extends Component {
+export class Highscore extends Component {
   state = {
     users: []
   };
