@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-export default class PersonList extends React.Component {
+export default class postlist extends React.Component {
   state = {
     users: []
   };
