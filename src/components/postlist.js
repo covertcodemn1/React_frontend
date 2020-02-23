@@ -10,8 +10,10 @@ export class postlist extends React.Component {
   componentDidMount() {
     axios
       .get(`https://schnitzeljagdar.herokuapp.com/users/getAllUser`)
-      .then(res => {
-        const persons = res.data;
+      .then(response => {
+        return response.json();
+      })
+      .then(persons => {
         this.setState({ persons });
       });
   }
