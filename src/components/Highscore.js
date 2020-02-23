@@ -87,7 +87,7 @@ export class Highscore extends Component {
     );
   }
 
-  redner() {
+  render() {
     return (
       <ul>
         {this.state.users.map(user => (
