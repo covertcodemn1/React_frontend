@@ -33,11 +33,9 @@ export class Home extends Component {
         </thead>
         <tbody>
           {userdata.map(user => (
-            <tr key={user.UserID}>
-              <td>{user.UserID}</td>
-              <td>{user.UserName}</td>
-              <td>{user.UserSchoolClass}</td>
-              <td>{user.UserHighscore}</td>
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.username}</td>
             </tr>
           ))}
         </tbody>
