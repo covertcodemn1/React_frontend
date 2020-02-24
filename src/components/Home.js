@@ -15,6 +15,7 @@ export class Home extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ userdata: data });
+        console.log(this.state.users);
       });
   }
 

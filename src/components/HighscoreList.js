@@ -17,6 +17,7 @@ export class HighscoreList extends Component {
       .then(res => {
         console.log(res);
         this.setState({ users: res.data });
+        console.log(this.state.users);
       })
       .catch(error => {
         console.log(error);
