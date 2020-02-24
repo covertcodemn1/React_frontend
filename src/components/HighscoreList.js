@@ -11,11 +11,12 @@ export class HighscoreList extends React.Component {
   getUsers() {
     axios
       .get("https://schnitzeljagdar.herokuapp.com/users/getAllUser")
-      .then(response =>
-        response.data.results.map(user => ({
-          username: `${user.login.username}`,
-          email: `${user.email}`
-        }))
+      .then(
+        response =>
+          (this.state = response.data.results.map(user => ({
+            username: `${user.login.username}`,
+            email: `${user.email}`
+          })))
       )
       .then(users => {
         this.setState({
