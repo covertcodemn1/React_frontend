@@ -34,13 +34,13 @@ export class HighscoreList extends React.Component {
     const { isLoading, users } = this.state;
     return (
       <React.Fragment>
-        <h2>Random User</h2>
+        <h2>User</h2>
         <div>
           {!isLoading ? (
             users.map(user => {
               const { username, email } = user;
               return (
-                <div key={username}>
+                <div key={email}>
                   <p>{username}</p>
                   <p>{email}</p>
                   <hr />
