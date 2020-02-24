@@ -75,7 +75,7 @@ export class Highscore extends Component {
 
 export class Highscore extends Component {
   state = {
-    users: json.array
+    users: []
   };
 
   componentDidMount() {
