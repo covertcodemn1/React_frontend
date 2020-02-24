@@ -83,6 +83,7 @@ export class Highscore extends Component {
       response => {
         const users = response.data;
         this.setState({ users });
+        console.log(this.state.users);
       }
     );
   }
