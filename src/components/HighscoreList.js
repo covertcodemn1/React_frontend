@@ -7,7 +7,7 @@ export class HighscoreList extends Component {
     super(props);
 
     this.state = {
-      users: json.array
+      users: []
     };
   }
 
