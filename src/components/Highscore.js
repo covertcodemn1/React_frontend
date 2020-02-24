@@ -92,7 +92,7 @@ export class Highscore extends Component {
     return (
       <ul>
         {this.state.users.map(user => (
-          <li key={user.id}>user.username</li>
+          <li key={user.id}>{user.username}</li>
         ))}
       </ul>
     );
