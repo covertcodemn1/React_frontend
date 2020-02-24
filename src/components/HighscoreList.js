@@ -25,7 +25,6 @@ export class HighscoreList extends React.Component {
         <thead>
           <tr>
             <th>UserName</th>
-            <th>Email</th>
             <th>UserSchoolClass</th>
             <th>UserHighscore</th>
           </tr>
@@ -34,8 +33,6 @@ export class HighscoreList extends React.Component {
           {array.map((arr, index) => (
             <tr key={index}>
               <td>{arr.username}</td>
-              <td>{arr.email}</td>
-
               <td>{arr.schoolclass}</td>
               <td>{arr.highscore}</td>
             </tr>
