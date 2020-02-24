@@ -3,7 +3,6 @@ import "./App.css";
 import { Home } from "./components/Home";
 import { Login } from "./components/Login";
 import { Navigation } from "./components/Navigation";
-import { Highscore } from "./components/Highscore";
 import { HighscoreList } from "./components/HighscoreList";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -15,7 +14,6 @@ function App() {
       <div className="container">
         <Switch>
           <Route path="/" component={Home} exact />
-          <Route path="/Highscore" component={Highscore} exact />
           <Route path="/Highscorelist" component={HighscoreList} exact />
           <Route path="/login" component={Login} exact />
         </Switch>

@@ -1,53 +1,56 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from "axios";
-import { Table } from "react-bootstrap";
 
-export class HighscoreList extends Component {
-  constructor(props) {
-    super(props);
+export class HighscoreList extends React.Component {
+  state = {
+    users: [],
+    isLoading: true,
+    errors: null
+  };
 
-    this.state = {
-      users: []
-    };
+  getUsers() {
+    axios
+      .get("https://schnitzeljagdar.herokuapp.com/users/getAllUser")
+      .then(response =>
+        response.data.results.map(user => ({
+          username: `${user.login.username}`,
+          email: `${user.email}`
+        }))
+      )
+      .then(users => {
+        this.setState({
+          users,
+          isLoading: false
+        });
+      })
+      .catch(error => this.setState({ error, isLoading: false }));
   }
 
   componentDidMount() {
-    axios
-      .get(`https://schnitzeljagdar.herokuapp.com/users/getAllUser`)
-      .then(res => {
-        console.log(res);
-        this.setState({ users: res.data });
-        console.log(this.state.users);
-      })
-      .catch(error => {
-        console.log(error);
-      });
+    this.getUsers();
   }
 
   render() {
-    const users = this.state;
+    const { isLoading, users } = this.state;
     return (
       <React.Fragment>
-        <Table className="mt-4" striped bordered hover size="sm">
-          <thead>
-            <tr>
-              <th>UserID</th>
-              <th>UserName</th>
-              <th>UserSchoolClass</th>
-              <th>UserHighscore</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map(user => (
-              <tr key={user.UserID}>
-                <td>{user.UserID}</td>
-                <td>{user.UserName}</td>
-                <td>{user.UserSchoolClass}</td>
-                <td>{user.UserHighscore}</td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
+        <h2>Random User</h2>
+        <div>
+          {!isLoading ? (
+            users.map(user => {
+              const { username, email } = user;
+              return (
+                <div key={username}>
+                  <p>{username}</p>
+                  <p>{email}</p>
+                  <hr />
+                </div>
+              );
+            })
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
       </React.Fragment>
     );
   }
