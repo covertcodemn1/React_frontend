@@ -4,7 +4,7 @@ import { Table } from "react-bootstrap";
 export class Home extends Component {
   constructor(props) {
     super(props);
-    this.state = { userdata: "" };
+    this.state = { userdata: [] };
   }
   componentDidMount() {
     this.refreshList();
