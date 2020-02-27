@@ -24,9 +24,9 @@ export class HighscoreList extends React.Component {
       <Table className="mt-4" striped bordered hover size="sm">
         <thead>
           <tr>
-            <th>UserName</th>
-            <th>UserSchoolClass</th>
-            <th>UserHighscore</th>
+            <th>Username</th>
+            <th>Klasee</th>
+            <th>Highscore</th>
           </tr>
         </thead>
         <tbody>

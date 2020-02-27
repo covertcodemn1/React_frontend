@@ -22,6 +22,12 @@ export class Navigation extends Component {
             <NavLink className="d-inline p-4 bg-dark text-white" to="./">
               Home
             </NavLink>
+            <NavLink
+              className="d-inline p-4 bg-dark text-white"
+              to="/Highscorelist"
+            >
+              Highscore
+            </NavLink>
           </Nav>
           <Nav className="ml-auto">
             <NavLink className="d-inline p-4 bg-dark text-white" to="/login">
