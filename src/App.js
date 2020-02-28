@@ -10,7 +10,6 @@ function App() {
   return (
     <BrowserRouter>
       <Navigation></Navigation>
-      <h1 className="justify-content-center">Highscore</h1>
       <div className="container">
         <Switch>
           <Route path="/" component={Home} exact />

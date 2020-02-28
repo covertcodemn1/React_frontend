@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import { Table } from "react-bootstrap";
+import { Table, Container, Col, Row } from "react-bootstrap";
+import styled from "styled-components";
 
 export class HighscoreList extends React.Component {
   state = {
@@ -17,28 +18,42 @@ export class HighscoreList extends React.Component {
   }
 
   render() {
+    const Title = styled.h1`
+      color: red;
+      font-family: sans-serif;
+      font-weight: bold;
+    `;
+
     const { users } = this.state;
     let array = users[0] ? Object.values(users[0]) : [];
     console.log(array);
     return (
-      <Table className="mt-4" striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th>Username</th>
-            <th>Klasee</th>
-            <th>Highscore</th>
-          </tr>
-        </thead>
-        <tbody>
-          {array.map((arr, index) => (
-            <tr key={index}>
-              <td>{arr.username}</td>
-              <td>{arr.schoolclass}</td>
-              <td>{arr.highscore}</td>
+      <Container>
+        <Row>
+          <Col md={{ span: 0, offset: 5 }}>
+            <Title>Highscore</Title>
+          </Col>
+        </Row>
+
+        <Table className="mt-4" striped bordered hover size="sm">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Klasse</th>
+              <th>Highscore</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {array.map((arr, index) => (
+              <tr key={index}>
+                <td>{arr.username}</td>
+                <td>{arr.schoolclass}</td>
+                <td>{arr.highscore}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </Container>
     );
   }
 }
