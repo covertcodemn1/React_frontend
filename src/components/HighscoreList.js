@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Table, Container, Col, Row } from "react-bootstrap";
-import styled from "styled-components";
+import { Table } from "react-bootstrap";
 
 export class HighscoreList extends React.Component {
   state = {
@@ -18,22 +17,12 @@ export class HighscoreList extends React.Component {
   }
 
   render() {
-    const Title = styled.h1`
-      color: red;
-      font-family: sans-serif;
-      font-weight: bold;
-    `;
-
     const { users } = this.state;
     let array = users[0] ? Object.values(users[0]) : [];
     console.log(array);
     return (
-      <Container>
-        <Row>
-          <Col md={{ span: 0, offset: 5 }}>
-            <Title>Highscore</Title>
-          </Col>
-        </Row>
+      <div>
+        <h1>Highscore</h1>
 
         <Table className="mt-4" striped bordered hover size="sm">
           <thead>
@@ -53,7 +42,7 @@ export class HighscoreList extends React.Component {
             ))}
           </tbody>
         </Table>
-      </Container>
+      </div>
     );
   }
 }

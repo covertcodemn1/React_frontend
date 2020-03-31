@@ -1,0 +1,14 @@
+.p {
+  font-size: 18em;
+  background-color: red;
+}
+h1.a {
+  align-content: center;
+  justify-content: center;
+}
+span.a {
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  align-content: center;
+}
