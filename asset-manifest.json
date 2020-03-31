@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/React_frontend/static/css/main.4f5031d5.chunk.css",
+    "main.js": "/React_frontend/static/js/main.77621ccb.chunk.js",
+    "main.js.map": "/React_frontend/static/js/main.77621ccb.chunk.js.map",
+    "runtime-main.js": "/React_frontend/static/js/runtime-main.086e37de.js",
+    "runtime-main.js.map": "/React_frontend/static/js/runtime-main.086e37de.js.map",
+    "static/js/2.50d71754.chunk.js": "/React_frontend/static/js/2.50d71754.chunk.js",
+    "static/js/2.50d71754.chunk.js.map": "/React_frontend/static/js/2.50d71754.chunk.js.map",
+    "index.html": "/React_frontend/index.html",
+    "precache-manifest.79ef4221504733623750a275baef3f76.js": "/React_frontend/precache-manifest.79ef4221504733623750a275baef3f76.js",
+    "service-worker.js": "/React_frontend/service-worker.js",
+    "static/css/main.4f5031d5.chunk.css.map": "/React_frontend/static/css/main.4f5031d5.chunk.css.map",
+    "static/js/2.50d71754.chunk.js.LICENSE": "/React_frontend/static/js/2.50d71754.chunk.js.LICENSE",
+    "static/media/apple-store.png": "/React_frontend/static/media/apple-store.0f68a05a.png",
+    "static/media/google-play.png": "/React_frontend/static/media/google-play.45e5779c.png",
+    "static/media/logo1.svg": "/React_frontend/static/media/logo1.3374cc8c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.086e37de.js",
+    "static/js/2.50d71754.chunk.js",
+    "static/css/main.4f5031d5.chunk.css",
+    "static/js/main.77621ccb.chunk.js"
+  ]
+}
